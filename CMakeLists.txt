@@ -6,6 +6,9 @@ set(CMAKE_CXX_STANDARD 17)
 # Add the path of the cmake files to the CMAKE_MODULE_PATH
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
 
+# add local installation of P0267 lib
+set(CMAKE_FIND_ROOT_PATH ${CMAKE_FIND_ROOT_PATH};${CMAKE_SOURCE_DIR}/../p0267_install/)
+
 project(OSM_A_star_search)
 
 # Set library output path to /lib
