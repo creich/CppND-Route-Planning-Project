@@ -26,6 +26,15 @@ class RouteModel : public Model {
         Node(){}
         Node(int idx, RouteModel * search_model, Model::Node node) : Model::Node(node), parent_model(search_model), index(idx) {}
 
+        float cost() const {
+            return h_value + g_value;
+        }
+
+        static bool greaterThan(const RouteModel::Node *node1, const RouteModel::Node *node2)
+        {
+            return (node1->cost() > node2->cost());
+        }
+
       private:
         int index;
         Node * FindNeighbor(std::vector<int> node_indices);
